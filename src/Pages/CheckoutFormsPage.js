@@ -56,13 +56,14 @@ export default function CheckoutFormsPage() {
       setTimeout(() => {
         if (quantity === 1) {
           // Redirigez vers la page prévue à cet effet
+          setLoading(false)
           window.location.href = '/Orderhistory'; // Remplacez '/success' par l'URL de la page de succès
         } else if (quantity === 2) {
           // Affichez le dialogue de transaction échouée
           setLoading(false)
           setOpen(true);
         }
-      }, 10000); // Définissez le délai en fonction de la durée du loader
+      }, 15000); // Définissez le délai en fonction de la durée du loader
     }
   };
 
@@ -402,7 +403,7 @@ export default function CheckoutFormsPage() {
                 message="Veuillez confirmer la commande sur votre téléphone"
                 description='Nous avons envoyé une notification à votre téléphone pour confirmer la commande.
                 Veuillez vérifier votre téléphone et suivre les instructions pour finaliser la commande.'
-                seconds={10} // vous pouvez ajuster le délai en secondes en fonction de vos besoins
+                seconds={15} // vous pouvez ajuster le délai en secondes en fonction de vos besoins
                 redirectTo={null}
                 isActive={loading}
               />
